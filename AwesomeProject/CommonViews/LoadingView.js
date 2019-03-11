@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
 
 import {
-    View, StyleSheet
+    StyleSheet, Text, View
 } from 'react-native';
 
-import MoveList from '../MovieList/MoveList'
 
 /*声明一个组件*/
-export default class ContentView extends Component {
+export default class LoadingView extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <MoveList/>
+                <Text style={{backgroundColor: 'red', fontSize: 26}}>Loading...</Text>
             </View>
         );
     }
@@ -20,10 +19,10 @@ export default class ContentView extends Component {
 /*声明一些样式*/
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'stretch',
-        backgroundColor: '#ffffff',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#00000040',
         flex: 1,
     }
 });
