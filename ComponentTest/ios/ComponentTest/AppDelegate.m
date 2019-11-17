@@ -15,10 +15,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  NSArray *imageList = @[@"https://avatars0.githubusercontent.com/u/18454795?s=460&v=4",
+                         @"https://avatars0.githubusercontent.com/u/18454795?s=460&v=4"];
+
+  NSDictionary *props = @{@"images" : imageList};
+  
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"ComponentTest"
-                                            initialProperties:nil];
+                                                   moduleName:@"ImageBrowserApp"
+                                            initialProperties:props];
 
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
@@ -30,13 +35,35 @@
   return YES;
 }
 
+//- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
+//{
+//  NSURL *url = nil;
+//#if DEBUG
+//  url = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+//#else
+//  url = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+//#endif
+//  return url;
+//}
+
+
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
-#if DEBUG
-  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-#else
-  return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-#endif
+  return [NSURL URLWithString:@"http://localhost:8081/ImageBrowserApp.bundle?platform=ios&dev=true&minify=false"];
 }
+
+
+//- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
+//{
+//  NSURL *url = nil;
+//#if DEBUG
+//  url = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+//#else
+//  url = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+//#endif
+//  return url;
+//}
+
+
 
 @end

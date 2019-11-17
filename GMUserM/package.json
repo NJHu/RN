@@ -1,0 +1,9 @@
+{
+  "name": "GMUserM",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+  }
+}

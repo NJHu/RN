@@ -17,6 +17,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* ComponentTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ComponentTestTests.m */; };
+		58D0E078237FDAF5006A83DC /* DYComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0E077237FDAF5006A83DC /* DYComponent.m */; };
 		5E7FEEBF03DE23909B84090A /* libPods-ComponentTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9698C2B39AB4FA20F58E5499 /* libPods-ComponentTest.a */; };
 		768A00589C95DE081DE5D016 /* libPods-ComponentTest-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F69869B100B4D7BC8371FD3 /* libPods-ComponentTest-tvOSTests.a */; };
 		78AF122EBC7B5121E402409E /* libPods-ComponentTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6A3DFA30DCAA341D1C8105 /* libPods-ComponentTestTests.a */; };
@@ -56,6 +57,8 @@
 		2D02E47B1E0B4A5D006451C7 /* ComponentTest-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ComponentTest-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ComponentTest-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ComponentTest-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ECF3282486CD4D207193DBA /* Pods-ComponentTest-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComponentTest-tvOS.release.xcconfig"; path = "Target Support Files/Pods-ComponentTest-tvOS/Pods-ComponentTest-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		58D0E076237FDAF5006A83DC /* DYComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYComponent.h; sourceTree = "<group>"; };
+		58D0E077237FDAF5006A83DC /* DYComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYComponent.m; sourceTree = "<group>"; };
 		59D8BE21539E7C51D0A3F3EC /* Pods-ComponentTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComponentTestTests.debug.xcconfig"; path = "Target Support Files/Pods-ComponentTestTests/Pods-ComponentTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E3FFB5AC9B67D2D2CA8022A /* Pods-ComponentTest-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComponentTest-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ComponentTest-tvOSTests/Pods-ComponentTest-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		64B49BBCCD73639F0C8F4C06 /* Pods-ComponentTest-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComponentTest-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ComponentTest-tvOSTests/Pods-ComponentTest-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				58D0E076237FDAF5006A83DC /* DYComponent.h */,
+				58D0E077237FDAF5006A83DC /* DYComponent.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -161,7 +166,6 @@
 				59D8BE21539E7C51D0A3F3EC /* Pods-ComponentTestTests.debug.xcconfig */,
 				BA867BE3606B6F5A5ED3AD4F /* Pods-ComponentTestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +312,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -529,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				58D0E078237FDAF5006A83DC /* DYComponent.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
