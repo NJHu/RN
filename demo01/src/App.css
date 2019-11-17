@@ -1,0 +1,43 @@
+@keyframes hide-item{
+    0% {
+        opacity:1;
+        color:yellow;
+    }
+    50%{
+        opacity: 0.5 ;
+        color:red;
+    }
+    100%{
+        opacity:0;
+        color: green;
+    }
+}
+
+@keyframes show-item{
+    0% {
+        opacity:0;
+        color:yellow;
+    }
+    50%{
+        opacity: 0.5 ;
+        color:red;
+    }
+    100%{
+        opacity:1;
+        color: green;
+    }
+}
+
+
+.input {
+    background-color: red;
+    border: 3px;
+}
+
+.show {
+    animation:show-item 2s ease-in;
+}
+
+.hide {
+    animation:hide-item 2s ease-in forwards;
+}
