@@ -1,14 +1,12 @@
 {
-  "name": "react_redux",
+  "name": "react_router",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
-    "redux": "^4.0.4"
+    "react-scripts": "3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
