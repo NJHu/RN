@@ -18,13 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor redColor];
     
     NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
 
     RCTRootView *rootView =
       [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
-                                  moduleName: @"RNHighScores"
+                                  moduleName: @"AwesomeProject"
                            initialProperties:
                              @{
                                @"scores" : @[
@@ -39,9 +39,9 @@
                                ]
                              }
                                launchOptions: nil];
-    
+    rootView.frame = CGRectMake(0, 100, 300, 400);
+    rootView.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:rootView];
-    rootView.frame = self.view.bounds;
 }
 
 @end

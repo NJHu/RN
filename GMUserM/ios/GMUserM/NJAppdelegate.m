@@ -22,8 +22,6 @@
     return YES;
 }
 
-
-#pragma mark - getter
 #pragma mark - getter
 - (UIWindow *)window
 {

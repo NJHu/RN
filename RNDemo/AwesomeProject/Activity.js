@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {AppRegistry} from 'react-native';
 
 
-export default class RNHighScores extends React.Component {
+export default class Activity extends React.Component {
 
     render() {
         var contents = null;
@@ -17,7 +18,7 @@ export default class RNHighScores extends React.Component {
 
         return (
             <View style={styles.container}>
-                <Text style={styles.highScoresTitle}>2048 High Scores!</Text>
+                <Text style={styles.highScoresTitle}>6666666666 High Scores!</Text>
                 <Text style={styles.scores}>{contents}</Text>
             </View>
         );
@@ -42,3 +43,6 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 });
+
+
+AppRegistry.registerComponent('Activity', () => Activity);
