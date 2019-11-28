@@ -19,12 +19,14 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor redColor];
-    
-    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
+//    10.118.24.31
+//    192.168.2.25
+    // localhost
+    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://10.118.24.31:8081/Activity.bundle?platform=ios"];
 
     RCTRootView *rootView =
       [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
-                                  moduleName: @"AwesomeProject"
+                                  moduleName: @"Activity"
                            initialProperties:
                              @{
                                @"scores" : @[
@@ -42,6 +44,11 @@
     rootView.frame = CGRectMake(0, 100, 300, 400);
     rootView.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:rootView];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    
 }
 
 @end

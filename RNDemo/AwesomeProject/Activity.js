@@ -1,9 +1,16 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button} from 'react-native';
 import {AppRegistry} from 'react-native';
+import {NativeModules} from 'react-native';
+const CalendarManager = NativeModules.CalendarManager;
 
 
 export default class Activity extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this._addCalEvent = this.addCalEvent.bind(this);
+    }
 
     render() {
         var contents = null;
@@ -20,8 +27,21 @@ export default class Activity extends React.Component {
             <View style={styles.container}>
                 <Text style={styles.highScoresTitle}>6666666666 High Scores!</Text>
                 <Text style={styles.scores}>{contents}</Text>
+                <Button onPress={this._addCalEvent} title="add"></Button>
             </View>
         );
+    }
+
+    async addCalEvent() {
+        try {
+
+            const events = await CalendarManager.findEvents();
+
+            console.info(events);
+
+        }catch (e) {
+            console.error(e);
+        }
     }
 }
 
