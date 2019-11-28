@@ -1,15 +1,26 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 import {AppRegistry} from 'react-native';
-import {NativeModules} from 'react-native';
-const CalendarManager = NativeModules.CalendarManager;
+import {NativeEventEmitter, NativeModules} from 'react-native';
 
+const CalendarManager = NativeModules.CalendarManager;
+const calendarManagerEmitter = new NativeEventEmitter(CalendarManager);
 
 export default class Activity extends React.Component {
 
     constructor(props) {
         super(props);
         this._addCalEvent = this.addCalEvent.bind(this);
+
+        const subscription = calendarManagerEmitter.addListener(
+            'EventReminder',
+            (reminder) => console.log(reminder.name)
+        );
+        this.mysubscription = subscription;
+    }
+
+    componentWillUnmount() {
+        this.mysubscription.remove();
     }
 
     render() {
@@ -39,7 +50,7 @@ export default class Activity extends React.Component {
 
             console.info(events);
 
-        }catch (e) {
+        } catch (e) {
             console.error(e);
         }
     }

@@ -7,10 +7,11 @@
 //
 
 #import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CalendarManager : NSObject<RCTBridgeModule>
+@interface CalendarManager : RCTEventEmitter<RCTBridgeModule>
 
 @end
 

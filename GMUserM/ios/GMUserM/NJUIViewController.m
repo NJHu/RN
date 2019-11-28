@@ -8,8 +8,9 @@
 
 #import "NJUIViewController.h"
 #import <React/RCTRootView.h>
+#import <React/RCTBridgeDelegate.h>
 
-@interface NJUIViewController ()
+@interface NJUIViewController ()<RCTBridgeDelegate>
 
 @end
 
@@ -22,28 +23,40 @@
 //    10.118.24.31
 //    192.168.2.25
     // localhost
-    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://10.118.24.31:8081/Activity.bundle?platform=ios"];
+    
+    NSDictionary *initialProperties = @{
+      @"scores" : @[
+        @{
+          @"name" : @"Alex",
+          @"value": @"42"
+         },
+        @{
+          @"name" : @"Joel",
+          @"value": @"10"
+        }
+      ]
+    };
+    
+    RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:nil];
 
-    RCTRootView *rootView =
-      [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
-                                  moduleName: @"Activity"
-                           initialProperties:
-                             @{
-                               @"scores" : @[
-                                 @{
-                                   @"name" : @"Alex",
-                                   @"value": @"42"
-                                  },
-                                 @{
-                                   @"name" : @"Joel",
-                                   @"value": @"10"
-                                 }
-                               ]
-                             }
-                               launchOptions: nil];
+    RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"Activity" initialProperties:initialProperties];
+    
+    
     rootView.frame = CGRectMake(0, 100, 300, 400);
     rootView.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:rootView];
+}
+
+
+- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
+{
+    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://10.118.24.31:8081/Activity.bundle?platform=ios"];
+    
+    return jsCodeLocation;
+}
+
+- (NSArray<id<RCTBridgeModule>> *)extraModulesForBridge:(RCTBridge *)bridge {
+    return @[];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
