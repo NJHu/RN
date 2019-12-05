@@ -14,6 +14,7 @@
 		5867F1E5237D90F000E56CCF /* NJUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5867F1E4237D90F000E56CCF /* NJUIViewController.m */; };
 		5867F1E7237D912B00E56CCF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5867F1E6237D912B00E56CCF /* LaunchScreen.xib */; };
 		58994DFF238FBDC2000A1AD3 /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58994DFE238FBDC2000A1AD3 /* CalendarManager.m */; };
+		58994E0523910038000A1AD3 /* RNTMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58994E0423910038000A1AD3 /* RNTMapManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		5867F1E6237D912B00E56CCF /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		58994DFD238FBDC2000A1AD3 /* CalendarManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarManager.h; sourceTree = "<group>"; };
 		58994DFE238FBDC2000A1AD3 /* CalendarManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarManager.m; sourceTree = "<group>"; };
+		58994E0323910038000A1AD3 /* RNTMapManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNTMapManager.h; sourceTree = "<group>"; };
+		58994E0423910038000A1AD3 /* RNTMapManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNTMapManager.m; sourceTree = "<group>"; };
 		8BE9B319FA293E0F77FB81ED /* Pods-GMUserM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMUserM.release.xcconfig"; path = "Target Support Files/Pods-GMUserM/Pods-GMUserM.release.xcconfig"; sourceTree = "<group>"; };
 		9EDFAEA809D8DD6742E03472 /* libPods-GMUserM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GMUserM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAD77FC54138E2C9D9BED74 /* Pods-GMUserM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMUserM.debug.xcconfig"; path = "Target Support Files/Pods-GMUserM/Pods-GMUserM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 				5867F1E4237D90F000E56CCF /* NJUIViewController.m */,
 				58994DFD238FBDC2000A1AD3 /* CalendarManager.h */,
 				58994DFE238FBDC2000A1AD3 /* CalendarManager.m */,
+				58994E0323910038000A1AD3 /* RNTMapManager.h */,
+				58994E0423910038000A1AD3 /* RNTMapManager.m */,
 				5867F1E6237D912B00E56CCF /* LaunchScreen.xib */,
 			);
 			path = GMUserM;
@@ -194,6 +199,7 @@
 			files = (
 				5867F1E2237D905C00E56CCF /* NJAppdelegate.m in Sources */,
 				58994DFF238FBDC2000A1AD3 /* CalendarManager.m in Sources */,
+				58994E0523910038000A1AD3 /* RNTMapManager.m in Sources */,
 				5867F1E5237D90F000E56CCF /* NJUIViewController.m in Sources */,
 				5867F1DA237D8FFC00E56CCF /* main.m in Sources */,
 			);

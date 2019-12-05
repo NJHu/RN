@@ -39,7 +39,7 @@
     
     RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:nil];
 
-    RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"Activity" initialProperties:initialProperties];
+    RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"MyMap" initialProperties:initialProperties];
     
     
     rootView.frame = CGRectMake(0, 100, 300, 400);
@@ -50,7 +50,7 @@
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
-    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://10.118.24.31:8081/Activity.bundle?platform=ios"];
+    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://10.118.24.31:8081/MyMap.bundle?platform=ios"];
     
     return jsCodeLocation;
 }

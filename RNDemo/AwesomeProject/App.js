@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button, NativeModules} from 'react-native';
 
+const ToastModule = NativeModules.ToastModule;
 
 export default class RNHighScores extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this._onPressLearnMore = this.onPressLearnMore.bind(this);
+    }
 
     render() {
         var contents = null;
@@ -19,8 +25,17 @@ export default class RNHighScores extends React.Component {
             <View style={styles.container}>
                 <Text style={styles.highScoresTitle}>2048 High Scores!</Text>
                 <Text style={styles.scores}>{contents}</Text>
+                <Button
+                    onPress={this._onPressLearnMore}
+                    title="Learn More"
+                    color="#841584"
+                />
             </View>
         );
+    }
+
+    onPressLearnMore () {
+        ToastModule.show("Awesome", ToastModule.SHORT);
     }
 }
 
