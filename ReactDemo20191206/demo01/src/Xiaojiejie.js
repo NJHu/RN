@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './style.css'
 import XiaojiejieItem from './XiaojiejieItem'
+import axios from 'axios'
 
 export default class Xiaojiejie extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ export default class Xiaojiejie extends Component {
         this.state = {
             inputValue: '',
             //----------主要 代码--------start
-            list: ['基础按摩', '精油推背']
+            list: ['基础按摩']
             //----------主要 代码--------end
         }
         this._inputChange = this.inputChange.bind(this);
@@ -20,16 +21,28 @@ export default class Xiaojiejie extends Component {
         return (
             <div>
                 <label htmlFor="input-id">加入服务</label>
-                <div><input id='input-id' className="input" value={this.state.inputValue} onChange={this._inputChange}
-                            type="text"/>
+                <div><input id='input-id'
+                            className="input"
+                            value={this.state.inputValue}
+                            onChange={this._inputChange}
+                            type="text"
+                            ref={(input) => {
+                                this.input = input
+                            }}/>
                     <button onClick={this._addList}>增加服务</button>
                 </div>
                 <div>
-                    <ul>
+                    <ul ref={(ul) => {
+                        this.ul = ul
+                    }}>
                         {this.state.list.map((item, index) => {
                             return (
 
-                                <XiaojiejieItem key={index+item}/>
+                                <XiaojiejieItem key={index + item}
+                                                content={item}
+                                                index={index}
+                                                deleteItem={this._deleteItem}
+                                />
                             )
                         })}
                     </ul>
@@ -39,10 +52,18 @@ export default class Xiaojiejie extends Component {
 
     }
 
-    inputChange({target}) {
-        console.info(target.value)
+    componentDidMount() {
+        axios.get('https://njhu.github.io/files/articleList.json')
+            .then((res) => {
+                console.log(JSON.stringify(res));
+            }).catch((err) => {
+            console.log(err);
+        });
+    }
+
+    inputChange() {
         this.setState((preState, props) => ({
-            inputValue: target.value
+            inputValue: this.input.value
         }));
     }
 
@@ -53,7 +74,10 @@ export default class Xiaojiejie extends Component {
                 preState.inputValue
             ],
             inputValue: ''
-        }));
+        }), () => {
+            console.log(this.ul.querySelectorAll('div').length);
+        });
+
     }
 
     deleteItem(index) {
